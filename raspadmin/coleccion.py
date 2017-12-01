@@ -2,7 +2,6 @@
 #hacercoleccion
 
 import collections
-import sqlite3
 import json
 
 def coleccion(select):
@@ -33,9 +32,9 @@ def coleccionraspinteraccion(select):
 	return enviodatosrasp
 
 def coleccionenviointeraccion(select):
-	datosinteraccion = select.fetchall()
+	#datosinteraccion = select.fetchall()
 	fechaid=[]
-	for value in datosinteraccion:
+	for value in select:
 		fechaiddatos = collections.OrderedDict()
 		fechaiddatos['id'] = value[0]
 		fechaiddatos['realizado'] = value[1]
