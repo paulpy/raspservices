@@ -7,6 +7,7 @@ import consumidorserviciosweb
 import comandosparaejecutar
 import conectarequipo
 import comandogpio
+import registrarenbd
 
 def sincronizaraccion(ipservidor, con, idinteraccion):
 	lograspadmin.escribirlog("Sincronizando Acciones")
