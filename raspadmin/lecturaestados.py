@@ -5,7 +5,7 @@ import datetime
 import pingserver
 import selectbd
 import registrarenbd
-import escrituralog
+import lograspadmin
 import diferenciatiempo
 import comandogpio
 
@@ -15,22 +15,22 @@ def equipoconectado(con, ipequipo):
 		estados = cursor.fetchall()
 		for estado in estados:
 			if str(estado[0])!=1:
-				escrituralog.escribirlog("Estado actual Encendido")
+				lograspadmin.escribirlog("Estado actual Encendido")
 				registrarenbd.historicoequipo(6,1,con)
 				break
 			else:
-				escrituralog.escribirlog("Estado Encendido")
+				lograspadmin.escribirlog("Estado Encendido")
 				break
 	else:
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchall()
 		for estado in estados:
 			if str(estado[0])==1:
-				escrituralog.escribirlog("Estado Apagado")
+				lograspadmin.escribirlog("Estado Apagado")
 				registrarenbd.historicoequipo(6,2,con)
 				break
 			else:
-				escrituralog.escribirlog("Estado Apagado")
+				lograspadmin.escribirlog("Estado Apagado")
 				break
 
 def lecturaestadoequipo(con):
