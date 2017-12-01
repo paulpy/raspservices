@@ -7,7 +7,7 @@ import json
 import sqlite3
 import selectbd
 import registrarenbd
-import escribirenlog
+import lograspadmin
 
 def actualizarcausa(ipservidor,con):
 	rc = requests.get(urlservices.urlcausa(ipservidor))
