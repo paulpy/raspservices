@@ -11,7 +11,7 @@ import lecturaestados
 import cumplimientoaccion
 
 con = sqlite3.connect("/root/raspadmin/raspweb/db.sqlite3")
-ipservidor = "192.168.43.161"
+ipservidor = "192.168.43.116"
 ipequipo = "192.168.0.51"
 lograspadmin.escribirlog("Inicio del RaspAdmin")
 registrarenbd.historicoraspberry("6","5",con)
