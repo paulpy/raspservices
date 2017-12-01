@@ -7,6 +7,7 @@ import urlservices
 import lograspadmin
 import coleccion
 import requests
+import registrarenbd
 
 def enviarlograsp(ipservidor, con):
 	lograspadmin.escribirlog("Verificando Sincronizacion del Raspberry")
