@@ -25,7 +25,7 @@ def actualizarcausa(ipservidor,con):
 				if value == str(causa[0]):
 					valorainsertar = None
 					break
-			if valorainsertar != None
+			if valorainsertar != None:
 				registrarenbd.registrarcausa(con,str(valorainsertar))
 				lograspadmin.escribirlog("Se agrega causa "+str(value))
 
@@ -45,7 +45,7 @@ def actualizaraccion(ipservidor,con):
 				if value == str(accion[0]):
 					valorainsertar = None
 					break
-			if valorainsertar != None
+			if valorainsertar != None:
 				registrarenbd.registraraccion(con,str(valorainsertar))
 				lograspadmin.escribirlog("Se agrega accion "+str(value))
 
@@ -65,6 +65,6 @@ def actualizarestado(ipservidor,con):
 				if value == str(estado[0]):
 					valorainsertar = None
 					break
-			if valorainsertar != None
+			if valorainsertar != None:
 				registrarenbd.registrarestado(con,str(valorainsertar))
 				lograspadmin.escribirlog("Se agrega estado "+str(value))

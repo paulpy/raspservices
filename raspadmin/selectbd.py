@@ -57,3 +57,8 @@ def selectestadoequipo(con):
 	cursor = con.cursor()
 	cursor.execute("SELECT estado_equipo_fk_id FROM raspapp_historico_estado_equipo ORDER BY id DESC")
 	return cursor
+
+def selectultimohee(con):
+	cursor = con.cursor()
+	cursor.execute("SELECT * FROM raspapp_historico_estado_equipo ORDER BY id DESC")
+	return cursor

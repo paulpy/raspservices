@@ -8,7 +8,7 @@ import pingserver
 import consumidorserviciosweb
 import lecturaestados
 import cumplimientoaccion
-import selecbd
+import selectbd
 
 con = sqlite3.connect("/root/raspadmin/raspweb/db.sqlite3")
 ipservidor = "192.168.43.116"
@@ -31,6 +31,7 @@ def raspprocess():
 		cumplimientoaccion.realizarinteraccionespendientes(ipservidor,con)
 	else:
 		lograspadmin.escribirlog("No existe conexion con el servidor")
+	lecturaestados.lecturaestadoequipo(con)
 	con.close()
 	lograspadmin.escribirlog("Esperando 10 Segundos para reinicio")
 	time.sleep(10)
