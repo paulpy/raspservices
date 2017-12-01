@@ -40,7 +40,7 @@ def lecturaestadoequipo(con):
         comandogpio.encender()
         registrarenbd.historicoequipo("3","6",con)
     if estadoactual[3]=="6":
-        diferencia=diferenciatiempo.diferenciadehroa(estadoactual[1],datetime.datetime.now)
+        diferencia=diferenciatiempo.diferenciadehora(estadoactual[1],datetime.datetime.now)
         if diferencia > 200:
             registrarenbd.historicoequipo("3","4",con)
         else:
