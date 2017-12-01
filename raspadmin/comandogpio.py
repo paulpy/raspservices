@@ -2,7 +2,7 @@
 #comandogpio
 
 def encender():
-    break
+    pass
 
 def apagar():
-    break
+    pass
