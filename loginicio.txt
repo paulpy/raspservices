@@ -1,0 +1,18 @@
+
+2017-11-27 17:24:45.275172 Culminado el proceso
+2017-11-27 17:24:48.778259 Iniciando Sistema
+2017-11-27 17:24:48.779333 Ingreso a la Base de datos
+2017-11-27 17:24:48.779650 Inicio del SO, Agregado al historico
+2017-11-27 17:24:58.783448 No existe Equipo, agregado al historico
+2017-11-27 17:24:58.812187 Cerrando conexion con la base de datos
+2017-11-27 17:24:58.812698 Desplegando AppWeb Puerto 8000
+2017-11-27 17:25:25.617738 Culminado el proceso
+2017-11-28 17:29:48.124479 Iniciando Sistema
+2017-11-28 17:29:48.124720 Ingreso a la Base de datos
+2017-11-28 17:29:48.124981 Inicio del SO, Agregado al historico
+2017-11-28 17:29:48.125296 Insercion en historicoraspberry
+2017-11-28 17:29:48.155772 No existe Equipo, agregado al historico
+2017-11-28 17:29:48.155878 Insercion en historicoequipo
+2017-11-28 17:29:48.162790 Cerrando conexion con la base de datos
+2017-11-28 17:29:48.162951 Desplegando AppWeb Puerto 8000
+2017-11-28 17:30:03.681573 Culminado el proceso
