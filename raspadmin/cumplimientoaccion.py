@@ -8,8 +8,8 @@ import actualizarcae
 import seleccionarinteraccion
 import consumidorserviciosweb
 
-def filtrointeraccion(ipservidor,con,interaccion):
-	if(interaccion[1]==70):
+def filtrointeraccion(ipservidor, con, interaccion):
+	if interaccion[1]==70:
 		lograspadmin.escribirlog("Sincronizar Acciones en el Raspberry")
 		seleccionarinteraccion.sincronizaraccion(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==50):

@@ -23,7 +23,7 @@ def selecthistoricoequiultid(id,con):
 	cursor.execute("SELECT raspapp_historico_estado_equipo.id, raspapp_historico_estado_equipo.fecha_hora_equipo_estado, raspapp_causas_cambios.causa_cambio, raspapp_estados_equipos.estado_equipo, raspapp_equipo.identificador_equipo FROM raspapp_historico_estado_equipo, raspapp_causas_cambios, raspapp_equipo, raspapp_estados_equipos WHERE raspapp_historico_estado_equipo.causa_equipo_fk_id=raspapp_causas_cambios.id AND raspapp_historico_estado_equipo.equipo_asignado_fk_id=raspapp_equipo.id AND raspapp_historico_estado_equipo.estado_equipo_fk_id=raspapp_estados_equipos.id AND raspapp_historico_estado_equipo.id > "+str(id))
 	return cursor
 
-def selectraspberry(con)
+def selectraspberry(con):
 	cursor = con.cursor()
 	cursor.execute("SELECT * FROM raspapp_raspberrys")
 	return cursor

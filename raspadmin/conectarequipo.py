@@ -6,7 +6,7 @@ Module to handle SSH Connections - Paramiko
 
 import paramiko
 
-C_SERVER = '192.168.1.56'
+C_SERVER = '192.168.12.28'
 C_PORT = 22
 C_USER = 'root'
 C_PASS = 'DEStruccion93'

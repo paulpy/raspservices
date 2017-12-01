@@ -62,44 +62,44 @@ def apagarequipo(ipservidor,con,idinteraccion):
 	registrarenbd.historicoequipo(6,1,con)
 	comandoremoto.cumplircomando("shutdown")
 
-def reiniciarequipo(ipservidor,con,idinteraccion)
+def reiniciarequipo(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("Apagando Equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
 	registrarenbd.historicoequipo(6,6,con)
 	comandoremoto.cumplircomando("reboot")
 
-def encenderequipo(ipservidor,con,idinteraccion)
+def encenderequipo(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("Encender Equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
 	registrarenbd.historicoequipo(6,6,con)
 
-def iniciarsubsistem(ipservidor,con,idinteraccion)
+def iniciarsubsistem(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("Iniciar SubSistema del equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
 	registrarenbd.historicoequipo(6,6,con)
 
-def pararsubsistem(ipservidor,con,idinteraccion)
+def pararsubsistem(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("Parar SubSistema del equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
 	registrarenbd.historicoequipo(6,6,con)
 
-def reiniciarsubsistem(ipservidor,con,idinteraccion)
+def reiniciarsubsistem(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("Reiniciar SubSistema del equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
 	registrarenbd.historicoequipo(6,6,con)
 
-def crearbackupespacio(ipservidor,con,idinteraccion)
+def crearbackupespacio(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("Crear backup de bd del equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
 	registrarenbd.historicoequipo(6,6,con)
 
-def enviarcomando(ipservidor,con,idinteraccion)
+def enviarcomando(ipservidor,con,idinteraccion):
 	lograspadmin.escribirlog("ejecutarcomando en el equipo")
 	registrarenbd.actualizarinteraccionbdlocal(con,idinteraccion)
 	consumidorserviciosweb.actualizarinteraccion(ipservidor,con,idinteraccion)
