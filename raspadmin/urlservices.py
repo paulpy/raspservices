@@ -2,7 +2,7 @@
 #constructordeurls
 
 def urlhistoricorasp(ipservidor,serie):
-	urlhrasp = "http://"+ipservidor+":8080/sivig/rest/historicoraspberry/"+str(serie)
+	urlhrasp = "http://"+ipservidor+":8080/sivig/rest/historicoraspberry/ultimosincronizado/"+str(serie)
 	return urlhrasp
 
 def urlsincrohistoricorasp(ipservidor):
@@ -10,11 +10,11 @@ def urlsincrohistoricorasp(ipservidor):
 	return urlhrasp
 
 def urlhistoricoequi(ipservidor,serie):
-	urlhrasp = "http://"+ipservidor+":8080/sivig/rest/historicoequipo/"+str(serie)
+	urlhequi = "http://"+ipservidor+":8080/sivig/rest/historicoequipo/ultimosincronizado/"+str(serie)
 	return urlhequi
 
 def urlsincrohistoricoequi(ipservidor):
-	urlhrasp = "http://"+ipservidor+":8080/sivig/rest/historicoequipo/sincronizarHistoricoEstado"
+	urlhequi = "http://"+ipservidor+":8080/sivig/rest/historicoequipo/sincronizarHistoricoEstado"
 	return urlhequi
 
 def urlinteracciones(ipservidor):
