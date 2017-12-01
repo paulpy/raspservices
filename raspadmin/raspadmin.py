@@ -8,7 +8,6 @@ import pingserver
 import consumidorserviciosweb
 import lecturaestados
 import cumplimientoaccion
-import selectbd
 
 con = sqlite3.connect("/root/raspadmin/raspweb/db.sqlite3")
 ipservidor = "192.168.43.116"

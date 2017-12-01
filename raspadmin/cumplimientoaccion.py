@@ -30,34 +30,32 @@ def filtrointeraccion(ipservidor, con, interaccion):
 		seleccionarinteraccion.cambiarfhora(ipservidor,con,fechahoraactual)
 	if(interaccion[1]==11):
 		lograspadmin.escribirlog("Apagar Equipo")
-		
+		seleccionarinteraccion.apagarequipo(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==21):
 		lograspadmin.escribirlog("Reinicio Equipo")
-
+		seleccionarinteraccion.reiniciarequipo(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==31):
 		lograspadmin.escribirlog("Encendido Equipo")
-
+		seleccionarinteraccion.encenderequipo(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==41):
 		lograspadmin.escribirlog("Sincronizar Fechahora Equipo")
 		fechahoraactual = interaccion[0]
-		seleccionarinteraccion.sinchorario(ipservidor,con,fechahoraactual)
-		
+		seleccionarinteraccion.sinchorario(ipservidor,con,interaccion)
 	if(interaccion[1]==61):
 		lograspadmin.escribirlog("Crear backup de SubSistema Equipo")
-		
+		seleccionarinteraccion.crearbackupespacio(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==91):
 		lograspadmin.escribirlog("Ejecutar inicio SubSistema Equipo")
-
+		seleccionarinteraccion.iniciarsubsistem(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==101):
 		lograspadmin.escribirlog("Ejecutar reinicio SubSistema Equipo")
-
+		seleccionarinteraccion.reiniciarsubsistem(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==111):
 		lograspadmin.escribirlog("Ejecutar Stop SubSistema Equipo")
-
+		seleccionarinteraccion.pararsubsistem(ipservidor,con,str(interaccion[4]))
 	if(interaccion[1]==121):
 		lograspadmin.escribirlog("Ejecutar Comando enviado")
-		
-
+		seleccionarinteraccion.enviarcomando(ipservidor,con,str(interaccion[4]),str(interaccion[2]))
 def realizarinteraccionespendientes(ipservidor,con):
 	select = selectbd.selectinteraccionpendiente(con)
 	interacciones = select.fetchall()

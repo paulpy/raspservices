@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 #escaneoaequipoconectado
 
+import datetime
 import pingserver
 import selectbd
 import registrarenbd
 import escrituralog
 import diferenciatiempo
 import comandogpio
-import datetime
 
-def equipoconectado(con,ipequipo):
+def equipoconectado(con, ipequipo):
 	if pingserver.isAlive(ipequipo):
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchall()
 		for estado in estados:
-			if (str(estado[0])!=1):
-				escrituralog.escribirlog("Estado Encendido")
+			if str(estado[0])!=1:
+				escrituralog.escribirlog("Estado actual Encendido")
 				registrarenbd.historicoequipo(6,1,con)
 				break
 			else:
@@ -25,7 +25,7 @@ def equipoconectado(con,ipequipo):
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchall()
 		for estado in estados:
-			if (str(estado[0])==1):
+			if str(estado[0])==1:
 				escrituralog.escribirlog("Estado Apagado")
 				registrarenbd.historicoequipo(6,2,con)
 				break

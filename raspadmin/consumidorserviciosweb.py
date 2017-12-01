@@ -8,11 +8,11 @@ import lograspadmin
 import coleccion
 import requests
 
-def enviarlograsp(ipservidor,con):
+def enviarlograsp(ipservidor, con):
 	lograspadmin.escribirlog("Verificando Sincronizacion del Raspberry")
 	select = selectdb.selectidentificadorrasp(con)
 	for serie in select:
-		url = urlservices.urlhistoricorasp(ipservidor,str(serie[0]))
+		url = urlservices.urlhistoricorasp(ipservidor, str(serie[0]))
 	rc = requests.get(url)
 	ultimoid = rc.json()
 	if str(ultimoid) == -1:
@@ -32,7 +32,7 @@ def enviarlograsp(ipservidor,con):
 		else:
 			lograspadmin.escribirlog("No es necesario sincronizar")
 
-def enviarlogequi(ipservidor,con):
+def enviarlogequi(ipservidor, con):
 	lograspadmin.escribirlog("Verificando Sincronizacion del Equipo")
 	select = selectdb.selectidentificadorequi(con)
 	for serie in select:
