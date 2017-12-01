@@ -2,7 +2,7 @@
 #consumidorserviciosweb
 
 import sqlite3
-import selectdb
+import selectbd
 import urlservices
 import lograspadmin
 import coleccion
@@ -10,7 +10,7 @@ import requests
 
 def enviarlograsp(ipservidor, con):
 	lograspadmin.escribirlog("Verificando Sincronizacion del Raspberry")
-	select = selectdb.selectidentificadorrasp(con)
+	select = selectbd.selectidentificadorrasp(con)
 	for serie in select:
 		url = urlservices.urlhistoricorasp(ipservidor, str(serie[0]))
 	rc = requests.get(url)
@@ -19,22 +19,22 @@ def enviarlograsp(ipservidor, con):
 		lograspadmin.escribirlog("No Existe serie en la base de Datos Central")
 	elif str(ultimoid) == 0:
 		lograspadmin.escribirlog("Sincronizando por Primerar Vez")
-		envio = coleccion.coleccion(selectdb.selecthistoricoraspultid(ultimoid,con))
+		envio = coleccion.coleccion(selectbd.selecthistoricoraspultid(ultimoid,con))
 		rce = requests.post(urlservices.urlsincrohistoricorasp(ipservidor), json=envio)
 	else:
 		lograspadmin.escribirlog("Corroborando Fila nula")
-		select = selectdb.selecthistoricoraspultid(ultimoid,con)
+		select = selectbd.selecthistoricoraspultid(ultimoid,con)
 		filanula = select.fetchall()
 		if filanula != None:
 			lograspadmin.escribirlog("Enviando Datos para actualizar")
-			envio = coleccion.coleccion(selectdb.selecthistoricoraspultid(ultimoid,con))
+			envio = coleccion.coleccion(selectbd.selecthistoricoraspultid(ultimoid,con))
 			rce = requests.post(urlservices.urlsincrohistoricorasp(ipservidor), json=envio)
 		else:
 			lograspadmin.escribirlog("No es necesario sincronizar")
 
 def enviarlogequi(ipservidor, con):
 	lograspadmin.escribirlog("Verificando Sincronizacion del Equipo")
-	select = selectdb.selectidentificadorequi(con)
+	select = selectbd.selectidentificadorequi(con)
 	for serie in select:
 		url = urlservices.urlhistoricoequi(ipservidor,str(serie[0]))
 	rc = requests.get(url)
@@ -43,22 +43,22 @@ def enviarlogequi(ipservidor, con):
 		lograspadmin.escribirlog("No Existe serie en la base de Datos Central")
 	elif str(ultimoid) == 0:
 		lograspadmin.escribirlog("Sincronizando por Primerar Vez")
-		envio = coleccion.coleccion(selectdb.selecthistoricoequiultid(ultimoid,con))
+		envio = coleccion.coleccion(selectbd.selecthistoricoequiultid(ultimoid,con))
 		rce = requests.post(urlservices.urlsincrohistoricoequi(ipservidor), json=envio)
 	else:
 		lograspadmin.escribirlog("Corroborando Fila nula")
-		select = selectdb.selecthistoricoraspultid(ultimoid,con)
+		select = selectbd.selecthistoricoraspultid(ultimoid,con)
 		filanula = select.fetchall()
 		if filanula != None:
 			lograspadmin.escribirlog("Enviando Datos para actualizar")
-			envio = coleccion.coleccion(selectdb.selecthistoricoequiultid(ultimoid,con))
+			envio = coleccion.coleccion(selectbd.selecthistoricoequiultid(ultimoid,con))
 			rce = requests.post(urlservices.urlsincrohistoricoequi(ipservidor), json=envio)
 		else:
 			lograspadmin.escribirlog("No es necesario sincronizar")
 
 def interaccionws(ipservidor,con):
 	lograspadmin.escribirlog("Consumiendo Servicio Web de Interaccion")
-	enviodtosrasp = coleccion.coleccionraspinteraccion(selectdb.selectraspberry(con))
+	enviodtosrasp = coleccion.coleccionraspinteraccion(selectbd.selectraspberry(con))
 	ri = requests.post(urlservices.urlinteracciones(ipservidor), json=enviodtosrasp)
 	rijson = ri.json
 	for value in rijson:
@@ -70,6 +70,6 @@ def interaccionws(ipservidor,con):
 
 def actualizarinteraccion(ipservidor,con,id):
 	lograspadmin.escribirlog("Consumiendo Servicio Web de Actualizar Interaccion")
-	cursor = selectdb.selectactualizarinte(con,id)
+	cursor = selectbd.selectactualizarinte(con,id)
 	envioactualizar = cursor.fetchall()
 	rfh = requests.post(urlservices.urlactualizarinteraccion(ipservidor), json=coleccion.coleccionenviointeraccion(envioactualizar))
