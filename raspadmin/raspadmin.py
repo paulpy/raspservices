@@ -2,6 +2,7 @@
 #raspadmin
 
 import sqlite3
+import time
 import lograspadmin
 import registrarenbd
 import pingserver
