@@ -60,7 +60,7 @@ def interaccionws(ipservidor,con):
 	lograspadmin.escribirlog("Consumiendo Servicio Web de Interaccion")
 	enviodtosrasp = coleccion.coleccionraspinteraccion(selectbd.selectraspberry(con))
 	ri = requests.post(urlservices.urlinteracciones(ipservidor), json=enviodtosrasp)
-	rijson = ri.json
+	rijson = ri.json()
 	for value in rijson:
 		if value["idAccion"] == None:
 			lograspadmin.escribirlog("No trajo interacciones")
