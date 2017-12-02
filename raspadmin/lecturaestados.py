@@ -30,7 +30,7 @@ def equipoconectado(con, ipequipo):
 		estados = cursor.fetchone()
 		print estados
 		for estado in estados:
-			if str(estado[0])==1:
+			if estado[0]==1:
 				lograspadmin.escribirlog("Estado Apagado")
 				registrarenbd.historicoequipo(6,2,con)
 				break
