@@ -10,9 +10,12 @@ import diferenciatiempo
 import comandogpio
 
 def equipoconectado(con, ipequipo):
+	lograspadmin.escribirlog("-------------------------------------------------")
+	lograspadmin.escribirlog("lecturaestadoequipo")
+	print "--------------------------Lectura de equipo--------------------------"
 	if pingserver.isAlive(ipequipo):
 		cursor = selectbd.selectestadoequipo(con)
-		estados = cursor.fetchall()
+		estados = cursor.fetchone()
 		for estado in estados:
 			if str(estado[0])!=1:
 				lograspadmin.escribirlog("Estado actual Encendido")
@@ -23,7 +26,7 @@ def equipoconectado(con, ipequipo):
 				break
 	else:
 		cursor = selectbd.selectestadoequipo(con)
-		estados = cursor.fetchall()
+		estados = cursor.fetchone()
 		for estado in estados:
 			if str(estado[0])==1:
 				lograspadmin.escribirlog("Estado Apagado")
@@ -33,16 +36,19 @@ def equipoconectado(con, ipequipo):
 				lograspadmin.escribirlog("Estado Apagado")
 				break
 
+
+
+"""
 def lecturaestadoequipo(con):
     historico = selectbd.selectultimohee(con)
-    estadoactuales = historico.fetchone()
-	for estadoactual in estadoactuales:	
-		if estadoactual[3]=="2":
-			comandogpio.encender()
-			registrarenbd.historicoequipo("3","6",con)
-		if estadoactual[3]=="6":
-			diferencia=diferenciatiempo.diferenciadehora(estadoactual[1],datetime.datetime.now)
-			if diferencia > 200:
-				registrarenbd.historicoequipo("3","4",con)
-			else:
-				pass
+    estadoactual = historico.fetchone()
+	if estadoactual[3]=="2":
+		comandogpio.encender()
+		registrarenbd.historicoequipo("3","6",con)
+	if estadoactual[3]=="6":
+		diferencia=diferenciatiempo.diferenciadehora(estadoactual[1],datetime.datetime.now)
+		if diferencia > 200:
+			registrarenbd.historicoequipo("3","4",con)
+		else:
+			pass
+			"""
