@@ -16,8 +16,9 @@ def equipoconectado(con, ipequipo):
 	if pingserver.isAlive(ipequipo):
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchone()
+		print estados
 		for estado in estados:
-			if str(estado[0])!=1:
+			if estado[0]!=1:
 				lograspadmin.escribirlog("Estado actual Encendido")
 				registrarenbd.historicoequipo(6,1,con)
 				break
@@ -27,6 +28,7 @@ def equipoconectado(con, ipequipo):
 	else:
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchone()
+		print estados
 		for estado in estados:
 			if str(estado[0])==1:
 				lograspadmin.escribirlog("Estado Apagado")
