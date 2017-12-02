@@ -46,8 +46,8 @@ def cambiarfhora(ipservidor, con, fechahora, interaccion):
 	registrarenbd.actualizarinteraccionbdlocal(con, str(interaccion[4]))
 	consumidorserviciosweb.actualizarinteraccion(ipservidor, con, str(interaccion[4]))
 	registrarenbd.historicoraspberry(6,6,con)
-	comando='date --set "'+str(fechahora[0:15])+'"'
-	comandosparaejecutar.ejecutarcomandosgenericos(comando)
+	comando='date --set="'+str(fechahora[0:15])+'"'
+	comandosparaejecutar.ejecutarcomandosgenerico(comando)
 
 def sinchorario(ipservidor,con,interaccion):
 	lograspadmin.escribirlog("Cambiar Fecha hora en Equipo")
