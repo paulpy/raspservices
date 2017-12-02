@@ -40,6 +40,7 @@ def lecturaestadoequipo(con):
 	historico = selectbd.selectultimohee(con)
 	estadoactual = historico.fetchone()
 	for estado in estadoactual:
+		print estado
 		if estado[3] == 2:
 			comandogpio.encender()
 			registrarenbd.historicoequipo(3,5,con)
