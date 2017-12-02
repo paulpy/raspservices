@@ -56,7 +56,7 @@ def sinchorario(ipservidor,con,interaccion):
 	registrarenbd.historicoequipo(6,6,con)
 	fechahora = interaccion[1]
 	comando="date --set \'"+str(fechahora[0:15])+"\'"
-	comandoremoto.cumplircomando(comando)
+	comandosparaejecutar.cambiarfechahora(comando)
 
 def apagarequipo(ipservidor, con, idinteraccion):
 	lograspadmin.escribirlog("Apagando Equipo")
