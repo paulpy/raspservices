@@ -50,6 +50,7 @@ def lecturaestadoequipo(con):
 				registrarenbd.historicoequipo(3,4,con)
 			else:
 				pass
+		break
 
 """
 def lecturaestadoequipo(con):
