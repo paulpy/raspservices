@@ -38,7 +38,7 @@ def equipoconectado(con, ipequipo):
 
 def lecturaestadoequipo(con):
 	historico = selectbd.selectultimohee(con)
-	estadoactual = historico.fetchone()
+	estadoactual = historico.fetchall()
 	for estado in estadoactual:
 		print estado
 		if estado[3] == 2:
