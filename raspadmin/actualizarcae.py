@@ -14,7 +14,7 @@ def actualizarcausa(ipservidor,con):
 	rcjson = rc.json()
 	for value in rcjson:
 		causas = selectbd.selectcausa(con)
-		filanula = causas.fetchall()
+		filanula = causas.fetchone()
 		if filanula == None:
 			registrarenbd.registrarcausa(con,str(value))
 			lograspadmin.escribirlog("Se agrega causa "+str(value))
@@ -34,7 +34,7 @@ def actualizaraccion(ipservidor,con):
 	rajson = ra.json()
 	for value in rajson:
 		acciones = selectbd.selectaccion(con)
-		filanula = acciones.fetchall()
+		filanula = acciones.fetchone()
 		if filanula == None:
 			registrarenbd.registraraccion(con,str(value))
 			lograspadmin.escribirlog("Se agrega accion "+str(value))
@@ -54,7 +54,7 @@ def actualizarestado(ipservidor,con):
 	rejson = re.json()
 	for value in rejson:
 		estados = selectbd.selectestado(con)
-		filanula = estados.fetchall()
+		filanula = estados.fetchone()
 		if filanula == None:
 			registrarenbd.registrarestado(con,str(value))
 			lograspadmin.escribirlog("Se agrega estado "+str(value))
