@@ -46,7 +46,7 @@ def cambiarfhora(ipservidor, con, interaccion):
 	registrarenbd.actualizarinteraccionbdlocal(con, str(interaccion[4]))	
 	consumidorserviciosweb.actualizarinteraccion(ipservidor, con, str(interaccion[4]))
 	registrarenbd.historicoraspberry(6,6,con)
-	fechaohora = interaccion[2]
+	fechaohora = interaccion[0]
 	print str(fechaohora)
 	lograspadmin.escribirlog(fechaohora)
 	comando="date --set=\'"+str(fechaohora[0:15])+"\'"
