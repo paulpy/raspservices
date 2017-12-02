@@ -27,7 +27,7 @@ def filtrointeraccion(ipservidor, con, interaccion):
 	if(interaccion[1]==40):
 		lograspadmin.escribirlog("Actualizando hora")
 		fechahoraactual = interaccion[0]
-		seleccionarinteraccion.cambiarfhora(ipservidor,con,fechahoraactual)
+		seleccionarinteraccion.cambiarfhora(ipservidor,con,fechahoraactual,interaccion)
 	if(interaccion[1]==11):
 		lograspadmin.escribirlog("Apagar Equipo")
 		seleccionarinteraccion.apagarequipo(ipservidor,con,str(interaccion[4]))
