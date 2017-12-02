@@ -16,9 +16,7 @@ def equipoconectado(con, ipequipo):
 	if pingserver.isAlive(ipequipo):
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchone()
-		print estados
 		for estado in estados:
-			print estado
 			if estado!="1":
 				lograspadmin.escribirlog("Estado actual Encendido")
 				registrarenbd.historicoequipo(6,1,con)
@@ -29,9 +27,7 @@ def equipoconectado(con, ipequipo):
 	else:
 		cursor = selectbd.selectestadoequipo(con)
 		estados = cursor.fetchone()
-		print estados
 		for estado in estados:
-			print estado
 			if estado==1:
 				lograspadmin.escribirlog("Estado Apagado")
 				registrarenbd.historicoequipo(6,2,con)
@@ -40,19 +36,16 @@ def equipoconectado(con, ipequipo):
 				lograspadmin.escribirlog("Estado Apagado")
 				break
 
-
-
-"""
 def lecturaestadoequipo(con):
     historico = selectbd.selectultimohee(con)
     estadoactual = historico.fetchone()
-	if estadoactual[3]=="2":
-		comandogpio.encender()
-		registrarenbd.historicoequipo("3","6",con)
-	if estadoactual[3]=="6":
-		diferencia=diferenciatiempo.diferenciadehora(estadoactual[1],datetime.datetime.now)
-		if diferencia > 200:
-			registrarenbd.historicoequipo("3","4",con)
-		else:
-			pass
-			"""
+	for estado in estadoactual:		
+		if estadoactual[3]=="2":
+			comandogpio.encender()
+			registrarenbd.historicoequipo("3","6",con)
+		if estadoactual[3]=="6":
+			diferencia=diferenciatiempo.diferenciadehora(estadoactual[1],datetime.datetime.now)
+			if diferencia > 200:
+				registrarenbd.historicoequipo("3","4",con)
+			else:
+				pass
