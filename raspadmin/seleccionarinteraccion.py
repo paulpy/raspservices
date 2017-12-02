@@ -49,7 +49,7 @@ def cambiarfhora(ipservidor, con, interaccion):
 	fechaohora = interaccion[0]
 	print str(fechaohora)
 	lograspadmin.escribirlog(fechaohora)
-	comando="date --set=\'"+str(fechaohora[0:15])+"\'"
+	comando="date --set=\'"+str(fechaohora[0:16])+"\'"
 	print comando
 	comandosparaejecutar.ejecutarcomandosgenerico(comando)
 
