@@ -19,7 +19,7 @@ def equipoconectado(con, ipequipo):
 		print estados
 		for estado in estados:
 			print estado
-			if str(estado[0])!="1":
+			if estado[0]!="1":
 				lograspadmin.escribirlog("Estado actual Encendido")
 				registrarenbd.historicoequipo(6,1,con)
 				break
@@ -32,7 +32,7 @@ def equipoconectado(con, ipequipo):
 		print estados
 		for estado in estados:
 			print estado
-			if str(estado[0])==1:
+			if estado[0]==1:
 				lograspadmin.escribirlog("Estado Apagado")
 				registrarenbd.historicoequipo(6,2,con)
 				break
