@@ -36,10 +36,25 @@ def equipoconectado(con, ipequipo):
 				lograspadmin.escribirlog("Estado Apagado")
 				break
 
+def lecturaestadoequipo():
+	historico = selectbd.selectultimohee(con)
+	estadoactual = historico.fetchone()
+	for estado in estadoactual:
+		if estado[3] == 2:
+			comandogpio.encender()
+			registrarenbd.historicoequipo(3,5,con)
+		if estado[3] == 6:
+			diferencia=diferenciatiempo.diferenciadehora(estado[1],datetime.datetime.now)
+			if diferencia => 200:
+				registrarenbd.historicoequipo(3,4,con)
+			else:
+				pass
+
+"""
 def lecturaestadoequipo(con):
     historico = selectbd.selectultimohee(con)
     estadoactual = historico.fetchone()
-	for estado in estadoactual:		
+	for estado in estadoactual:
 		if estadoactual[3]=="2":
 			comandogpio.encender()
 			registrarenbd.historicoequipo("3","6",con)
@@ -49,3 +64,4 @@ def lecturaestadoequipo(con):
 				registrarenbd.historicoequipo("3","4",con)
 			else:
 				pass
+"""
