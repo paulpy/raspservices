@@ -41,12 +41,14 @@ def reiniciarraspberry(ipservidor, con, idinteraccion):
 	registrarenbd.historicoraspberry(6,6,con)
 	comandosparaejecutar.reiniciarrasp()
 
-def cambiarfhora(ipservidor, con, fechahora, interaccion):
+def cambiarfhora(ipservidor, con, interaccion):
 	lograspadmin.escribirlog("Cambiar Fecha-Hora")
-	registrarenbd.actualizarinteraccionbdlocal(con, str(interaccion[4]))
+	registrarenbd.actualizarinteraccionbdlocal(con, str(interaccion[4]))	
 	consumidorserviciosweb.actualizarinteraccion(ipservidor, con, str(interaccion[4]))
 	registrarenbd.historicoraspberry(6,6,con)
-	comando='date --set="'+str(fechahora[0:15])+'"'
+	fechaohora = interaccion[2]
+	lograspadmin.escribirlog(fechaohora)
+	comando='date --set="'+str(fechaohora[0:15])+'"'
 	comandosparaejecutar.ejecutarcomandosgenerico(comando)
 
 def sinchorario(ipservidor,con,interaccion):
