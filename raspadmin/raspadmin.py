@@ -10,14 +10,14 @@ import consumidorserviciosweb
 import lecturaestados
 import cumplimientoaccion
 
-con = sqlite3.connect("/root/raspadmin/raspweb/db.sqlite3")
+con = sqlite3.connect("/root/raspproyect/raspweb/db.sqlite3")
 ipservidor = "192.168.1.54"
 ipequipo = "192.168.0.51"
 lograspadmin.escribirlog("Inicio del RaspAdmin")
-registrarenbd.historicoraspberry("6","5",con)
+registrarenbd.historicoraspberry(6, 1, con)
 con.close()
 def raspprocess():
-	con = sqlite3.connect("/root/raspadmin/raspweb/db.sqlite3")
+	con = sqlite3.connect("/root/raspproyect/raspweb/db.sqlite3")
 	lecturaestados.equipoconectado(con,ipequipo)
 	if pingserver.isAlive(ipservidor):
 		lograspadmin.escribirlog("Ping al Servidor")
