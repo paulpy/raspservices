@@ -11,7 +11,6 @@ def reiniciarrasp():
 	subprocess.call("reboot")
 
 def cambiarfechahora(comando):
-	print "llego hasta aca"
 	subprocess.call(comando)
 
 def ejecutarcomandosgenerico(comando):
