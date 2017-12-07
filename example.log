@@ -1,0 +1,18 @@
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too
+2017-12-05 22:42:33,328 This message should go to the log file
+2017-12-05 22:42:33,348 So should this
+2017-12-05 22:42:33,348 And this, too
+2017-12-05 22:43:30,055 This message should go to the log file
+2017-12-05 22:43:30,055 So should this
+2017-12-05 22:43:30,055 And this, too
+2017-12-05 22:43:55,530 - This message should go to the log file
+2017-12-05 22:43:55,532 - So should this
+2017-12-05 22:43:55,532 - And this, too
+2017-12-05 22:44:32,555 - This message should go to the log file - DEBUG
+2017-12-05 22:44:32,555 - So should this - INFO
+2017-12-05 22:44:32,555 - And this, too - WARNING
+2017-12-05 22:44:55,312 - DEBUG - This message should go to the log file
+2017-12-05 22:44:55,313 - INFO - So should this
+2017-12-05 22:44:55,313 - WARNING - And this, too
