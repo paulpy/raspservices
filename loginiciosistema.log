@@ -1,0 +1,20 @@
+2017-12-07 11:13:17,624 : INFO : Prueba de log
+2017-12-07 11:13:17,640 : INFO : Prueba de log
+2017-12-07 11:13:26,802 : INFO : Prueba de log
+2017-12-07 11:13:26,802 : INFO : Prueba de log
+2017-12-07 11:14:58,621 : INFO : Prueba de log
+2017-12-07 11:14:58,621 : INFO : Prueba de log
+pythoasd
+
+
+[main]
+default_app_port=8080
+default_app_name='hola'
+
+[logging]
+path=//asdasdasd
+level=lasfoasd
+
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
