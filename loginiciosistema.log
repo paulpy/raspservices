@@ -1,20 +1,9 @@
-2017-12-07 11:13:17,624 : INFO : Prueba de log
-2017-12-07 11:13:17,640 : INFO : Prueba de log
-2017-12-07 11:13:26,802 : INFO : Prueba de log
-2017-12-07 11:13:26,802 : INFO : Prueba de log
-2017-12-07 11:14:58,621 : INFO : Prueba de log
-2017-12-07 11:14:58,621 : INFO : Prueba de log
-pythoasd
-
-
-[main]
-default_app_port=8080
-default_app_name='hola'
-
-[logging]
-path=//asdasdasd
-level=lasfoasd
-
-import ConfigParser
-
-config = ConfigParser.ConfigParser()
+2017-12-07 20:48:20,507 : INFO : Incio de InicioSistema
+2017-12-07 20:48:20,507 : INFO : Registro de Inicio del Sistema Operativo
+2017-12-07 20:48:20,507 : INFO : Existe comunicacione con el equipo
+2017-12-07 20:48:20,507 : INFO : Registrado com encedido
+2017-12-07 20:48:20,507 : INFO : No existe comunicacione con el equipo
+2017-12-07 20:48:20,507 : INFO : Registrado com apagado
+2017-12-07 20:48:20,509 : INFO : Iniciando Django Puerto 8000
+2017-12-07 20:48:20,509 : INFO : Terminando Proceso
+2017-12-07 20:48:20,509 : INFO : ---------------------------------------
