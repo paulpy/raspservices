@@ -9,6 +9,11 @@ import logging as log
 import pingequipo
 import registrarenhistorico
 
+FORMAT_LOG = '%(asctime)s : %(levelname)s : %(message)s'
+FILE_NAME = 'loginiciosistema.log'
+LEVEL_F = log.INFO
+log.basicConfig(level=LEVEL_F, format=FORMAT_LOG, filename=FILE_NAME)
+
 log.info('Incio de InicioSistema')
 log.debug('Ingrego a la base de datos')
 con = sqlite3.connect("/root/raspproyect/raspweb/db.sqlite3")
