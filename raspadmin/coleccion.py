@@ -12,16 +12,16 @@ LEVEL_F = log.INFO
 log.basicConfig(level=LEVEL_F, format=FORMAT_LOG, filename=FILE_NAME)
 
 def coleccion(select):
-    log.info('*****Ingreso al metodo de crear coleccion******')
+    log.info('******Ingreso al metodo de crear coleccion *****')
     log_db = select.fetchall()
     lista_log = []
-    for log in log_db:
+    for logdb in log_db:
 		t_log = collections.OrderedDict()
-		t_log['id'] = log[0]
-		t_log['momento'] = log[1]
-		t_log['causa'] = log[2]
-		t_log['estado'] = log[3]
-		t_log['equipo'] = log[4]
+		t_log['id'] = logdb[0]
+		t_log['momento'] = logdb[1]
+		t_log['causa'] = logdb[2]
+		t_log['estado'] = logdb[3]
+		t_log['equipo'] = logdb[4]
 		lista_log.append(t_log)
     log_json = json.dumps(lista_log)
     log.info('*****Retornando coleccion fin del metodo******')
@@ -43,13 +43,13 @@ def coleccionraspinteraccion(select):
     return enviodatosrasp
 
 def coleccionenviointeraccion(select):
-	log.info('*****Ingreso al mertodo crear Coleccion envio de interaccion*****')
-	fechaid=[]
-	for value in select:
-		fechaiddatos = collections.OrderedDict()
-		fechaiddatos['id'] = value[0]
-		fechaiddatos['realizado'] = value[1]
-		fechaid.append(fechaiddatos)
-	fechahorajson = json.dumps(fechaid)
+    log.info('*****Ingreso al mertodo crear Coleccion envio de interaccion*****')
+    fechaid=[]
+    for value in select:
+        fechaiddatos = collections.OrderedDict()
+        fechaiddatos['id'] = value[0]
+        fechaiddatos['realizado'] = value[1]
+        fechaid.append(fechaiddatos)
+    fechahorajson = json.dumps(fechaid)
     log.info('*****Retornando coleccion Fin del metodo*****')
-	return fechahorajson
+    return fechahorajson

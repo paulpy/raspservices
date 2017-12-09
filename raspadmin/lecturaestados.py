@@ -46,12 +46,11 @@ def lecturaestadoequipo(con):
     historico = selectbd.selectultimohee(con)
     estadoactual = historico.fetchall()
     for estado in estadoactual:
-        print estado
-        if estado[3] == 2:
+        if estado[4] == 2:
             log.info('Comprabando estado para encendido')
             comandogpio.encender()
             registrarenbd.historicoequipo(3, 4, con)
-        if estado[3] == 3:
+        if estado[4] == 3:
             diferencia=diferenciatiempo.diferenciadehora(estado[1], datetime.datetime.now)
             if diferencia >= 200:
                 log.info('Tiempo de reinicio muy alto estado desconectado')
