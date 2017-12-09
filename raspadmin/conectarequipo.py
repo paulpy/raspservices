@@ -28,7 +28,7 @@ def cumplicomando(comando):
     if pingserver.isAlive(C_SERVER):
         log.info('*****Hay pign con el equipo intentado cumplir comando*****')
         ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(C_SERVER, port=C_PORT, username=C_USER, password=C_PASS)
         stdin, stdout, stderr = ssh.exec_command(str(comando))
         output = stdout.readlines()
