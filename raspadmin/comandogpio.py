@@ -1,21 +1,30 @@
 #!/usr/bin/env python
 #comandogpio
+# -*- coding: utf-8 -*-
+
 import RPi.GPIO as GPIO
 import time
-import lograspadmin
+import logging as log
+
+FORMAT_LOG = '%(asctime)s : %(levelname)s : %(message)s'
+FILE_NAME = '/opt/raspservices/raspadmin/lograspadmin.log'
+LEVEL_F = log.INFO
+log.basicConfig(level=LEVEL_F, format=FORMAT_LOG, filename=FILE_NAME)
 
 def encender():
-    lograspadmin.escribirlog("Encender equipo timepo 2 Segundos")
+    log.info('*****Ingreso al metodo GPIO encender*****')
     GPIO.setmode(GPIO.BCM)
     GPIO.setwaings(False)
-    GPIO.setup(17,GPIO.HIGH)
+    GPIO.setup(17, GPIO.HIGH)
     time.sleep(2)
-    GPIO.setup(17,GPIO.LOW)
+    GPIO.setup(17, GPIO.LOW)
+    log.info('*******Fin del metodo******')
 
 def apagar():
-    lograspadmin.escribirlog("Apagar equipo timepo 5 Segundos")
+    log.info('*****Ingreso al metodo GPIO encender*****')
     GPIO.setmode(GPIO.BCM)
     GPIO.setwaings(False)
-    GPIO.setup(17,GPIO.HIGH)
+    GPIO.setup(17, GPIO.HIGH)
     time.sleep(5)
-    GPIO.setup(17,GPIO.LOW)
+    GPIO.setup(17, GPIO.LOW)
+    log.info('*****Fin del metodo*****')
