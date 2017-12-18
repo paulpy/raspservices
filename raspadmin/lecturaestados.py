@@ -6,7 +6,6 @@ import logging as log
 import pingserver
 import selectbd
 import registrarenbd
-import lograspadmin
 import diferenciatiempo
 import comandogpio
 
@@ -50,8 +49,8 @@ def lecturaestadoequipo(con):
             log.info('Comprabando estado para encendido')
             comandogpio.encender()
             registrarenbd.historicoequipo(3, 4, con)
-        if estado[4] == 3:
-            diferencia=diferenciatiempo.diferenciadehora(estado[1], datetime.datetime.now)
+        if estado[4] == 4:
+            diferencia = diferenciatiempo.diferenciadehora(estado[1], datetime.datetime.now)
             if diferencia >= 200:
                 log.info('Tiempo de reinicio muy alto estado desconectado')
                 registrarenbd.historicoequipo(3, 6, con)
