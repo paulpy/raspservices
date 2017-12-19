@@ -14,8 +14,7 @@ def diferenciadehora(fecha1,fecha2):
     log.info('*****Metodo de diferencia en hora******')
     data1 = fecha1
     data2 = fecha2
-    diferencia = data2 - data1
-    segundos = diferencia.seconds
-    segundos = segundos % 60
+    resultadotiempo = data2 - data1
+    segundos = int(resultadotiempo.total_seconds())
     return segundos
     log.info('******fin del metodo*****')
