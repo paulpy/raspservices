@@ -17,7 +17,7 @@ log.basicConfig(level=LEVEL_F, format=FORMAT_LOG, filename=FILE_NAME)
 
 con = sqlite3.connect("/root/raspproyect/raspweb/db.sqlite3")
 ipservidor = "192.168.0.200"
-ipequipo = "192.168.0.51"
+ipequipo = "192.168.0.50"
 log.info('*****----Inicio del RaspAdmin----*****')
 registrarenbd.historicoraspberry(6, 1, con)
 con.close()
@@ -35,6 +35,7 @@ def raspprocess():
     lecturaestados.lecturaestadoequipo(con)
     con.close()
     log.info('*****Esperando 10 Segundos*****')
+    log.info('_____________________________________________')
     time.sleep(10)
 
 while True:

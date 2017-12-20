@@ -50,7 +50,7 @@ def lecturaestadoequipo(con):
             comandogpio.encender()
             registrarenbd.historicoequipo(3, 4, con)
         if estado[4] == 4:
-            diferencia = diferenciatiempo.diferenciadehora(estado[1], datetime.datetime.now)
+            diferencia = diferenciatiempo.diferenciadehora(estado[1])
             if diferencia >= 200:
                 log.info('Tiempo de reinicio muy alto estado desconectado')
                 registrarenbd.historicoequipo(3, 6, con)
