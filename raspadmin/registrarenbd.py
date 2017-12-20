@@ -49,9 +49,16 @@ def registrarcausa(con, causa):
     cursor.execute("INSERT INTO raspapp_causas_cambios (causa_cambio) VALUES (?);", [causa])
     con.commit()
 
-def actualizarinteraccionbdlocal(con, interaccion):
+def actualizarinteraccionbdlocal(con, interaccion, codigoestado):
     log.info('Actualizacion de Interaccion')
     fechahora = datetime.datetime.now()
     cursor = con.cursor()
-    cursor.execute("UPDATE raspapp_interaccion SET interaccion_fecha_hora_re = \'"+str(fechahora)+"\' , interaccion_activo = 1 WHERE id = "+str(interaccion))
+    cursor.execute("UPDATE raspapp_interaccion SET interaccion_fecha_hora_re = \'"+str(fechahora)+"\' , interaccion_activo = 1, interaccion_cod_estado = "+codigoestado+" WHERE id = "+str(interaccion))
+    con.commit()
+
+def actualizarinteraccionbdlocalcomando(con, interaccion, codigoestado):
+    log.info('Actualizacion de Interaccion')
+    fechahora = datetime.datetime.now()
+    cursor = con.cursor()
+    cursor.execute("UPDATE raspapp_interaccion SET interaccion_fecha_hora_re = \'"+str(fechahora)+"\' , interaccion_activo = 1, interaccion_cod_estado = "+codigoestado+" WHERE id = "+str(interaccion))
     con.commit()

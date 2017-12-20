@@ -49,6 +49,7 @@ def coleccionenviointeraccion(select):
         fechaiddatos = collections.OrderedDict()
         fechaiddatos['id'] = value[0]
         fechaiddatos['realizado'] = value[1]
+        fechaiddatos['resultado'] = value[2]
         fechaid.append(fechaiddatos)
     fechahorajson = json.dumps(fechaid)
     log.info('*****Retornando coleccion Fin del metodo*****')

@@ -50,7 +50,7 @@ def selectcausa(con):
 
 def selectactualizarinte(con,id):
     cursor = con.cursor()
-    cursor.execute("SELECT interaccion_id_interaccion, interaccion_fecha_hora_re FROM raspapp_interaccion where id = "+id+";")
+    cursor.execute("SELECT interaccion_id_interaccion, interaccion_fecha_hora_re, interaccion_cod_estado FROM raspapp_interaccion where id = "+id+";")
     return cursor
 
 def selectestadoequipo(con):

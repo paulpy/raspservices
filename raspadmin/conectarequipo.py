@@ -33,6 +33,8 @@ def cumplicomando(comando):
         stdin, stdout, stderr = ssh.exec_command(str(comando))
         output = stdout.readlines()
         log.info('Mensaje del comando cumplido'.join(output))
+        codigosalida = stdout.channel.recv_exit_status()
+        return codigosalida
         log.info('-------------------------------------------')
     else:
         log.info('*****No existe conexion con el equipo orden no cumplida*****')
