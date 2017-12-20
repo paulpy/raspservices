@@ -53,12 +53,5 @@ def actualizarinteraccionbdlocal(con, interaccion, codigoestado):
     log.info('Actualizacion de Interaccion')
     fechahora = datetime.datetime.now()
     cursor = con.cursor()
-    cursor.execute("UPDATE raspapp_interaccion SET interaccion_fecha_hora_re = \'"+str(fechahora)+"\' , interaccion_activo = 1, interaccion_cod_estado = "+codigoestado+" WHERE id = "+str(interaccion))
-    con.commit()
-
-def actualizarinteraccionbdlocalcomando(con, interaccion, codigoestado):
-    log.info('Actualizacion de Interaccion')
-    fechahora = datetime.datetime.now()
-    cursor = con.cursor()
-    cursor.execute("UPDATE raspapp_interaccion SET interaccion_fecha_hora_re = \'"+str(fechahora)+"\' , interaccion_activo = 1, interaccion_cod_estado = "+codigoestado+" WHERE id = "+str(interaccion))
+    cursor.execute("UPDATE raspapp_interaccion SET interaccion_fecha_hora_re = \'"+str(fechahora)+"\' , interaccion_activo = 1, interaccion_cod_estado = "+str(codigoestado)+" WHERE id = "+str(interaccion))
     con.commit()
